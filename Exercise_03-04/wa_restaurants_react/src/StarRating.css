@@ -1,0 +1,18 @@
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+}
+
+.star {
+  font-size: 1em; /* Adjust star size */
+  color: gold; /* Color of filled stars */
+  margin-right: 2px;
+}
+
+.empty-star {
+  color: #ccc; /* Color of empty stars */
+}
+
+.half-star {
+  /* You might need more specific styling for a half star character */
+}

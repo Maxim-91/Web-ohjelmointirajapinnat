@@ -1,0 +1,80 @@
+.restaurant-card {
+    display: flex; /* Enable flexbox for side-by-side layout */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    align-items: center; /* Vertically align items in the card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Add this for absolute positioning of the button */
+    padding-right: 80px; /* Add some right padding to make space for the button */
+  }
+  
+  .card-left {
+    margin-right: 15px;
+  }
+  
+  .restaurant-image {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 4px;
+  }
+  
+  .card-right {
+    flex-grow: 1; /* Allow the right side to take up remaining space */
+  }
+  
+  .restaurant-name {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .restaurant-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .restaurant-rating span {
+    margin-left: 8px;
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  .restaurant-details {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #555;
+  }
+  
+  .restaurant-details span {
+    margin-right: 10px;
+  }
+  
+  .restaurant-address {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 0;
+  }
+  
+  .remove-rating-button-right {
+    background-color: #f44336; /* Red color for emphasis */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute; /* Position relative to the card */
+    top: 15px;        /* Adjust vertical position as needed */
+    right: 15px;       /* Position on the far right */
+    z-index: 10;      /* Ensure it's above other content if needed */
+  }
+  
+  .remove-rating-button-right:hover {
+    background-color: #d32f2f;
+  }
