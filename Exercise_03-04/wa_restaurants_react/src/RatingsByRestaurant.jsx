@@ -11,7 +11,7 @@ function RatingsByRestaurant() {
   const [ratings, setRatings] = useState([]);
   const [error, setError] = useState(null);
 
-  // Use GET from http://localhost:8000/docs for ratings
+  // Use GET from http://localhost:8000/docs for ratings, Tehtävä 4a
   useEffect(() => {
     fetch(`http://localhost:8000/api/restaurants/${id}/ratings`, {
       headers: { accept: 'application/json' }
@@ -20,7 +20,15 @@ function RatingsByRestaurant() {
       .then((data) => setRatings(data))      
   }, [id]); 
 
-// Display the restaurant ratings
+  // Tehtävä 4b: Valitun arvioin poisto
+  const handleDelete = (ratingId) => 
+    {
+        fetch(`http://localhost:8000/api/restaurants/${id}/ratings/${ratingId}`, 
+            { method: 'DELETE'});
+        setRatings(prev => prev.filter(r => r.id !== ratingId));
+    };
+
+// Display the restaurant ratings, Tehtävä 4a
 return ( 
     <div>       
       <h2>Restaurant Ratings №{id}</h2>       
@@ -30,7 +38,7 @@ return (
             <div key={rating.id}>
                 <div className="star-rating" style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <StarRating rating={rating.value} />
-                    <button>Delete</button>
+                    <button onClick={() => handleDelete(rating.id)}>Delete</button>
                 </div>
                 <p>{rating.description}</p>
                 <p style={{ fontSize: '0.9em', color: 'gray' }}>Date:{rating.date_rated}</p>
